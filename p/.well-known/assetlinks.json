@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.mriezebosch.sudoku",
+    "sha256_cert_fingerprints":
+    ["2A:94:AB:35:F5:1E:C5:97:07:B2:8E:8D:E4:60:50:AC:10:A5:B7:D1:4A:02:03:68:7C:0E:E8:44:62:AF:A6:51"]
+  }
+}]
