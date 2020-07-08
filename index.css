@@ -10,3 +10,15 @@ html, body {
     margin: 0 auto;
     text-align: center;
 }
+
+a {
+    text-decoration: none;
+}
+
+#google {
+    width: 10em;
+}
+
+#apple {
+    width: 10em;
+}
