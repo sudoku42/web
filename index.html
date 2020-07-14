@@ -5,6 +5,12 @@
       <meta name='viewport' content='width=device-width'>
       <title>sudoku42</title>
       <link href="index.css" rel="stylesheet" type="text/css" />
+      <script>
+          var params = new URLSearchParams(window.location.search)
+          if (params.has('id')) {
+              window.document.title = params.get('id')
+          }
+      </script>
     </head>
 
     <body>
