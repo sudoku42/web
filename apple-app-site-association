@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "AC87Y9Z4PF.com.mriezebosch.sudoku",
+      "paths": ["*"]
+    }
+    ]
+  }
+}
