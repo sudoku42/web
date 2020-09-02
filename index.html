@@ -3,12 +3,19 @@
     <head>
       <meta charset='utf-8'>
       <meta name='viewport' content='width=device-width'>
-      <title>sudoku42</title>
+      <title>sudoku42: the only real time multiplayer sudoku</title>
+      <meta name="description" content="Join me in this multiplayer sudoku game!">
+
+      <meta property="og:title" content="sudoku42" />
+      <meta property="og:url" content="https://sudoku42.xyz/" />
+      <meta property="og:description" content="Join me in this multiplayer sudoku game!">
+      <meta property="og:image" content="https://raw.githubusercontent.com/sudoku42/web/master/icon.png">
+
       <link href="index.css" rel="stylesheet" type="text/css" />
       <script>
           var params = new URLSearchParams(window.location.search)
           if (params.has('id')) {
-              window.document.title = params.get('id')
+              window.document.title = params.get('id') + ' - sudoku42'
           }
       </script>
     </head>
