@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width'>
-      <title>sudoku42: the only real time multiplayer sudoku</title>
-      <meta name="description" content="Join me in this multiplayer sudoku game!">
 
-      <meta property="og:title" content="sudoku42" />
-      <meta property="og:url" content="https://sudoku42.xyz/" />
-      <meta property="og:description" content="Join me in this multiplayer sudoku game!">
-      <meta property="og:image" content="https://raw.githubusercontent.com/sudoku42/web/master/icon.png">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width'>
+    <title>sudoku42: the only real time multiplayer sudoku</title>
+    <meta name="description" content="Join me in this multiplayer sudoku game!">
 
-      <link href="index.css" rel="stylesheet" type="text/css" />
-      <script>
-          var params = new URLSearchParams(window.location.search)
-          if (params.has('id')) {
-              window.document.title = params.get('id') + ' - sudoku42'
-          }
-      </script>
-    </head>
+    <meta property="og:title" content="sudoku42" />
+    <meta property="og:url" content="https://sudoku42.xyz/" />
+    <meta property="og:description" content="Join me in this multiplayer sudoku game!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/sudoku42/web/master/icon.png">
 
-    <body>
-        <div class="center">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script>
+        var params = new URLSearchParams(window.location.search)
+        if (params.has('id')) {
+            window.document.title = params.get('id') + ' - sudoku42'
+        }
+    </script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+        rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="center">
+        <div>
             <a href="https://play.google.com/store/apps/details?id=com.mriezebosch.sudoku">
                 <img id="google" src="img/playstore.svg" alt="Google Play" />
             </a>
@@ -29,6 +34,10 @@
                 <img id="apple" src="img/appstore.svg" alt="iOS App Store" />
             </a>
         </div>
-    </body>
+        <ul class="contact">
+            <li><a href="https://twitter.com/MRiezebosch"><i class="icon-twitter"></i></a></li>
+            <li><a href="mailto:mriezebosch@gmail.com?subject=sudoku42"><i class="icon-envelope"></i></a></li>
+        </ul>
+    </div>
+</body>
 </html>
-      

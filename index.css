@@ -22,3 +22,15 @@ a {
 #apple {
     width: 10em;
 }
+
+ul.contact {
+    padding-inline: 0;
+    margin: 1em;
+}
+
+.contact li {
+    list-style-type: none;    
+    display: inline-block;
+    margin: 0.5em;
+    font-size: 1.5em;
+}
