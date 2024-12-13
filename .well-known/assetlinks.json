@@ -1,9 +1,15 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.mriezebosch.sudoku",
-    "sha256_cert_fingerprints":
-    ["1B:96:70:1B:1E:F2:A2:56:43:0E:49:CE:BD:E0:3E:4B:A6:91:94:15:3C:4E:58:85:6E:EA:88:C0:01:0D:BF:AF"]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mriezebosch.sudoku",
+      "sha256_cert_fingerprints": [
+        "1B:96:70:1B:1E:F2:A2:56:43:0E:49:CE:BD:E0:3E:4B:A6:91:94:15:3C:4E:58:85:6E:EA:88:C0:01:0D:BF:AF",
+        "3D:AC:4E:C4:F3:54:E3:62:53:80:50:3D:08:BE:CB:47:A2:34:32:0E:72:15:27:76:AA:0C:F1:88:0C:24:99:E1"
+      ]
+    }
   }
-}]
+]
