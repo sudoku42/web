@@ -7,6 +7,9 @@
   --button: #222;
   --button-text: #fff;
   --error: #b3261e;
+  --preview-surface: #f1f3f5;
+  --preview-border: rgba(0, 0, 0, .14);
+  --preview-image-background: #e7ecf2;
 }
 * {
   box-sizing: border-box;
@@ -51,6 +54,67 @@ p {
 .brand-name {
   color: inherit;
   font-weight: 700;
+}
+.preview-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 12px 0 28px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.preview-link span {
+  margin-left: 6px;
+  font-size: 20px;
+}
+.app-preview {
+  margin: 0 -24px 28px;
+  padding: 20px 0 16px;
+  background: var(--preview-surface);
+  overflow: hidden;
+}
+.app-preview > h2,
+.app-preview > p {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.app-preview > p {
+  color: var(--muted);
+  font-size: 15px;
+}
+.preview-gallery {
+  display: grid;
+  grid-auto-columns: minmax(260px, 78vw);
+  grid-auto-flow: column;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 0 24px 12px;
+  scroll-padding-inline: 24px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.preview-gallery::-webkit-scrollbar {
+  display: none;
+}
+.preview-card {
+  margin: 0;
+  scroll-snap-align: start;
+}
+.preview-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: var(--preview-image-background);
+  border: 1px solid var(--preview-border);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .28);
+}
+.preview-card figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
 }
 form, #success {
   margin-top: 24px;
@@ -156,5 +220,12 @@ footer a {
     --button: #eee;
     --button-text: #181818;
     --error: #ffb4ab;
+    --preview-surface: #2a2a2a;
+    --preview-border: rgba(255, 255, 255, .16);
+  }
+}
+@media (min-width: 700px) {
+  .preview-gallery {
+    grid-auto-columns: minmax(260px, 320px);
   }
 }
