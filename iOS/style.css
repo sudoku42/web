@@ -67,6 +67,15 @@ p {
   margin-left: 6px;
   font-size: 20px;
 }
+.preview-link-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0 0;
+}
+.preview-link-right {
+  display: flex;
+  justify-content: flex-end;
+}
 .app-preview {
   margin: 0 -24px 28px;
   padding: 20px 0 16px;
