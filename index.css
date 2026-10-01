@@ -6,21 +6,25 @@ html, body {
 }
 
 .center {
-    width: 40%;
+    width: min(100%, 32rem);
     margin: 0 auto;
     text-align: center;
+}
+
+.center > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
 }
 
 a {
     text-decoration: none;
 }
 
-#google {
-    width: 10em;
-}
-
-#apple {
-    width: 10em;
+.store-badge {
+    width: 12rem !important;
+    max-width: 100%;
 }
 
 ul.contact {
@@ -31,6 +35,23 @@ ul.contact {
 .contact li {
     list-style-type: none;    
     display: inline-block;
-    margin: 0.5em;
-    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.contact a {
+    color: inherit;
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 30rem) {
+    html, body {
+        padding: 0.5em;
+    }
+
+    .store-badge {
+        width: min(14rem, 100%) !important;
+        margin: 0.2rem 0;
+    }
 }

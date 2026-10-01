@@ -20,10 +20,10 @@
   <div class="page">
     <header><a href="/" class="brand"><img src="../icon.png" width="24" height="24" alt="">sudoku42</a></header>
     <main>
-      <h1>Sudoku42 for iOS</h1>
+      <h1>Sudoku42 for iOS ✨</h1>
       <p>I’m bringing Sudoku42 to iPhone and iPad, with daily puzzles and real-time multiplayer.</p>
-      <p>Before paying for an Apple developer membership, I’d like to see how many people are interested.</p>
       <section id="signup" aria-label="Join the waitlist">
+        <p>Before paying for an Apple developer membership, I’d like to see how many people are interested.</p>
         <form id="waitlist-form">
           <label for="email">Email address</label>
           <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
@@ -34,12 +34,13 @@
         <noscript><p>Please enable JavaScript to sign up, or <a href="mailto:manuel@sudoku42.com?subject=iOS%20waitlist">email me to join</a>.</p></noscript>
       </section>
       <section id="success" aria-labelledby="success-title" hidden>
-        <h2 id="success-title" tabindex="-1">You’re on the list.</h2>
+        <h2 id="success-title" tabindex="-1">You’re on the list! 🎉</h2>
         <p>I’ll email you when the iOS version is ready.</p>
       </section>
-      <section class="sharing" aria-label="Share the waitlist">
-        <p><strong>Please share this page with a friend.</strong> The more people join the waitlist, the sooner I can publish the app.</p>
-        <button class="secondary" id="share-button" type="button">Share this page</button>
+      <section class="sharing" id="sharing" aria-label="Share the waitlist" hidden>
+        <h2>Please share this page</h2>
+        <p>📣 More people on the waitlist means I can move ahead with the iOS release sooner.</p>
+        <button id="share-button" type="button">Share the waitlist ↗</button>
         <div id="share-fallback" hidden>
           <label for="share-url">Link to share</label>
           <input id="share-url" type="url" value="https://sudoku42.com/iOS/?utm_source=friend&amp;utm_campaign=ios_waitlist" readonly>

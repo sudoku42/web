@@ -108,11 +108,12 @@ button:disabled {
   color: var(--error);
 }
 .sharing {
-  border-top: 1px solid var(--border);
   margin-top: 24px;
-  padding-top: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
 }
-.sharing > p:first-child {
+.sharing p {
   font-size: 14px;
   color: var(--muted);
 }

@@ -7,6 +7,17 @@ const formStatus = document.getElementById("form-status");
 const joinButton = document.getElementById("join-button");
 const shareStatus = document.getElementById("share-status");
 const shareInput = document.getElementById("share-url");
+const signup = document.getElementById("signup");
+const success = document.getElementById("success");
+const sharing = document.getElementById("sharing");
+const signupCompleteKey = "sudoku42-ios-waitlist-joined";
+function showConfirmation(focus = false) {
+  signup.hidden = true;
+  success.hidden = false;
+  sharing.hidden = false;
+  if (focus) document.getElementById("success-title").focus();
+}
+if (localStorage.getItem(signupCompleteKey) === "true") showConfirmation();
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (joinButton.disabled || !form.reportValidity()) return;
@@ -34,8 +45,8 @@ form.addEventListener("submit", async (event) => {
     }
     const { result } = await response.json();
     if (result?.ok !== true) throw new Error("We couldn’t save your signup. Please try again.");
-    document.getElementById("signup").hidden = true;
-    document.getElementById("success").hidden = false;
+    localStorage.setItem(signupCompleteKey, "true");
+    showConfirmation(true);
     form.reset();
     document.getElementById("success-title").focus();
   } catch (error) {
