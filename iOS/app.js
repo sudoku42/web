@@ -1,7 +1,7 @@
 "use strict";
 const endpoint = "https://us-central1-sudoku42xyz.cloudfunctions.net/waitlist";
 const campaignUrl = "https://sudoku42.com/iOS/?utm_source=friend&utm_campaign=ios_waitlist";
-const shareText = "Sudoku42 is coming to iPhone and iPad. Join the waitlist to hear when it’s ready.";
+const shareText = "sudoku42 is almost ready for iPhone and iPad. Join the waitlist to hear when it’s ready.";
 const form = document.getElementById("waitlist-form");
 const formStatus = document.getElementById("form-status");
 const joinButton = document.getElementById("join-button");
@@ -67,7 +67,7 @@ async function share() {
   shareStatus.textContent = "";
   if (navigator.share) {
     try {
-      await navigator.share({ title: "Sudoku42 for iOS", text: shareText, url: campaignUrl });
+      await navigator.share({ title: "sudoku42 for iPhone & iPad", text: shareText, url: campaignUrl });
       return;
     } catch (error) {
       if (error.name === "AbortError") return;
