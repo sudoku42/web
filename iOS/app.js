@@ -1,5 +1,5 @@
 "use strict";
-const endpoint = "https://us-central1-sudoku42xyz.cloudfunctions.net/iosWaitlist";
+const endpoint = "https://us-central1-sudoku42xyz.cloudfunctions.net/waitlist";
 const campaignUrl = "https://sudoku42.com/iOS/?utm_source=friend&utm_campaign=ios_waitlist";
 const shareText = "Sudoku42 is coming to iPhone and iPad. Join the waitlist to hear when it’s ready.";
 const form = document.getElementById("waitlist-form");
@@ -22,18 +22,18 @@ form.addEventListener("submit", async (event) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       signal: controller.signal,
-      body: JSON.stringify({
+      body: JSON.stringify({ data: {
         email: form.elements.email.value.trim(),
-        website: form.elements.website.value,
-        consent: true,
         source: params.get("utm_source") || "direct",
-      }),
+      } }),
     });
     if (!response.ok) {
-      if (response.status === 429) throw new Error("Too many attempts. Please try again in an hour.");
+      if (response.status === 429) throw new Error("The server is busy. Please try again in a moment.");
       if (response.status === 400) throw new Error("Please check your email address and try again.");
       throw new Error("We couldn’t save your signup. Please try again in a moment.");
     }
+    const { result } = await response.json();
+    if (result?.ok !== true) throw new Error("We couldn’t save your signup. Please try again.");
     document.getElementById("signup").hidden = true;
     document.getElementById("success").hidden = false;
     form.reset();

@@ -138,13 +138,7 @@ footer a {
   align-items: center;
   min-height: 44px;
 }
-.honeypot {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
+
 [hidden] {
   display: none !important;
 }

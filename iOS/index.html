@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="../icon.png">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2" defer></script>
 </head>
 <body>
   <div class="page">
@@ -28,7 +28,6 @@
           <label for="email">Email address</label>
           <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
           <button type="submit" id="join-button">Join the waitlist</button>
-          <div class="honeypot" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
           <p class="fine-print">By joining, you agree to an email when the iOS version is ready. No newsletter. <a href="mailto:manuel@sudoku42.com?subject=Remove%20me%20from%20the%20iOS%20waitlist">Leave anytime</a>.</p>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
         </form>
