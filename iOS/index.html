@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sudoku42 for iOS — Waitlist</title>
+  <meta name="description" content="Daily puzzles and real-time multiplayer Sudoku for iPhone and iPad. Join the waitlist for an email when the iOS version is ready.">
+  <link rel="canonical" href="https://sudoku42.com/iOS/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sudoku42 for iOS">
+  <meta property="og:description" content="Join the waitlist for an email when the iOS version is ready.">
+  <meta property="og:url" content="https://sudoku42.com/iOS/">
+  <meta property="og:image" content="https://sudoku42.com/icon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header><a href="/" class="brand"><img src="../icon.png" width="24" height="24" alt="">sudoku42</a></header>
+    <main>
+      <h1>Sudoku42 for iOS</h1>
+      <p>I’m bringing Sudoku42 to iPhone and iPad, with daily puzzles and real-time multiplayer.</p>
+      <p>Before paying for an Apple developer membership, I’d like to see how many people are interested.</p>
+      <section id="signup" aria-label="Join the waitlist">
+        <form id="waitlist-form">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+          <button type="submit" id="join-button">Join the waitlist</button>
+          <div class="honeypot" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+          <p class="fine-print">By joining, you agree to an email when the iOS version is ready. No newsletter. <a href="mailto:manuel@sudoku42.com?subject=Remove%20me%20from%20the%20iOS%20waitlist">Leave anytime</a>.</p>
+          <p class="status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <noscript><p>Please enable JavaScript to sign up, or <a href="mailto:manuel@sudoku42.com?subject=iOS%20waitlist">email me to join</a>.</p></noscript>
+      </section>
+      <section id="success" aria-labelledby="success-title" hidden>
+        <h2 id="success-title" tabindex="-1">You’re on the list.</h2>
+        <p>I’ll email you when the iOS version is ready.</p>
+      </section>
+      <section class="sharing" aria-label="Share the waitlist">
+        <p><strong>Please share this page with a friend.</strong> The more people join the waitlist, the sooner I can publish the app.</p>
+        <button class="secondary" id="share-button" type="button">Share this page</button>
+        <div id="share-fallback" hidden>
+          <label for="share-url">Link to share</label>
+          <input id="share-url" type="url" value="https://sudoku42.com/iOS/?utm_source=friend&amp;utm_campaign=ios_waitlist" readonly>
+          <button class="secondary" id="copy-button" type="button">Copy link</button>
+        </div>
+        <a id="email-share" href="mailto:?subject=Sudoku42%20for%20iOS&amp;body=Sudoku42%20is%20coming%20to%20iPhone%20and%20iPad.%20Join%20the%20waitlist%20to%20hear%20when%20it%E2%80%99s%20ready.%0A%0Ahttps%3A%2F%2Fsudoku42.com%2FiOS%2F%3Futm_source%3Dfriend%26utm_campaign%3Dios_waitlist">Share by email</a>
+        <p class="status" id="share-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer><a href="/privacy/">Privacy</a><a href="mailto:manuel@sudoku42.com">Contact Manuel</a></footer>
+  </div>
+</body>
+</html>
