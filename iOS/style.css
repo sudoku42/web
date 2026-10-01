@@ -7,7 +7,6 @@
   --button: #222;
   --button-text: #fff;
   --error: #b3261e;
-  --accent: #bd5d32;
 }
 * {
   box-sizing: border-box;
@@ -48,10 +47,6 @@ h2 {
 }
 p {
   margin: 0 0 16px;
-}
-.target {
-  color: var(--accent);
-  font-weight: 700;
 }
 .brand-name {
   color: inherit;
