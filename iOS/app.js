@@ -7,9 +7,11 @@ const formStatus = document.getElementById("form-status");
 const joinButton = document.getElementById("join-button");
 const shareStatus = document.getElementById("share-status");
 const shareInput = document.getElementById("share-url");
+const shareFallback = document.getElementById("share-fallback");
 const signup = document.getElementById("signup");
 const success = document.getElementById("success");
 const sharing = document.getElementById("sharing");
+const resetWaitlist = document.getElementById("reset-waitlist");
 const signupCompleteKey = "sudoku42-ios-waitlist-joined";
 function showConfirmation(focus = false) {
   signup.hidden = true;
@@ -18,6 +20,18 @@ function showConfirmation(focus = false) {
   if (focus) document.getElementById("success-title").focus();
 }
 if (localStorage.getItem(signupCompleteKey) === "true") showConfirmation();
+resetWaitlist.addEventListener("click", () => {
+  localStorage.removeItem(signupCompleteKey);
+  signup.hidden = false;
+  success.hidden = true;
+  sharing.hidden = true;
+  form.reset();
+  formStatus.classList.remove("error");
+  formStatus.textContent = "";
+  shareFallback.hidden = true;
+  shareStatus.textContent = "";
+  form.elements.email.focus();
+});
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (joinButton.disabled || !form.reportValidity()) return;
@@ -59,7 +73,7 @@ form.addEventListener("submit", async (event) => {
   }
 });
 function showShareFallback() {
-  document.getElementById("share-fallback").hidden = false;
+  shareFallback.hidden = false;
   shareInput.focus();
   shareInput.select();
 }
