@@ -20,7 +20,7 @@ The endpoint uses Firebase `onCall`. Requests use `{ "data": { "email": "you@exa
 
 ## Data and campaign
 
-- `/ios-waitlist/{sha256(normalizedEmail)}` holds `email`, `createdAt` (milliseconds), `source`, and `consentVersion`. Transactions prevent duplicate entries and preserve original consent/source. Existing and new signups receive the same response.
+- `/ios-waitlist/{sha256(normalizedEmail)}` holds `email`, `createdAt` (milliseconds), `source`, `deviceFamily`, and `consentVersion`. The browser derives `deviceFamily` as `iphone`, `ipad`, `android`, `desktop`, or `other`; the function stores the supplied category without enforcing a fixed list, but limits it to a string of 40 characters. Do not store raw user agents or IP addresses. Transactions prevent duplicate entries and preserve original consent/source. Existing and new signups receive the same response.
 - Existing database rules deny client reads/writes to the waitlist path. Admin SDK writes happen only on the backend. Do not add public read access for counts.
 - Share links use `utm_source=friend&utm_campaign=ios_waitlist`; the recorded `source` lets you compare direct and shared signups. No personal referral IDs or public signup counts are used.
 - Email addresses are unverified. Before growing this into an ongoing email campaign, add a transactional email service and double opt-in.

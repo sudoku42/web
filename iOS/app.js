@@ -13,6 +13,14 @@ const success = document.getElementById("success");
 const sharing = document.getElementById("sharing");
 const resetWaitlist = document.getElementById("reset-waitlist");
 const signupCompleteKey = "sudoku42-ios-waitlist-joined";
+function deviceFamily() {
+  const userAgent = navigator.userAgent;
+  if (/iPad/.test(userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "ipad";
+  if (/iPhone/.test(userAgent)) return "iphone";
+  if (/Android/.test(userAgent)) return "android";
+  if (/Mobi/.test(userAgent)) return "other";
+  return "desktop";
+}
 function showConfirmation(focus = false) {
   signup.hidden = true;
   success.hidden = false;
@@ -50,6 +58,7 @@ form.addEventListener("submit", async (event) => {
       body: JSON.stringify({ data: {
         email: form.elements.email.value.trim(),
         source: params.get("utm_source") || "direct",
+        deviceFamily: deviceFamily(),
       } }),
     });
     if (!response.ok) {
