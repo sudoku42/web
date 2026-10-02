@@ -16,45 +16,46 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../icon.png">
   <link rel="stylesheet" href="style.css?v=3">
-  <script src="app.js?v=3" defer></script>
+  <script src="../translate.js?v=19" defer></script>
+  <script src="app.js?v=5" defer></script>
 </head>
 <body>
   <div class="page">
     <header><a href="/" class="brand"><img src="../icon.png" width="24" height="24" alt="">sudoku42</a></header>
     <main>
-      <h1><span class="brand-name">sudoku42</span> for iPhone &amp; iPad ✨</h1>
+      <h1 data-i18n="heading">sudoku42 is coming to iPhone &amp; iPad 📲</h1>
       <section id="signup" aria-label="Join the waitlist">
-        <p>Sudoku, made social. Take on one daily puzzle with everyone and compare times worldwide, or solve a shared board live with friends and family.</p>
-        <p>When 💯 people join the waitlist, I’ll publish the iPhone &amp; iPad app—the number I need before paying Apple’s yearly developer fee.</p>
+        <p data-i18n="intro">Sudoku, made social. Take on one daily puzzle with everyone and compare times worldwide, or solve a shared board live with friends and family.</p>
+        <p data-i18n="threshold">When 💯 people join the waitlist, I’ll publish the iPhone &amp; iPad app—the number I need before paying Apple’s yearly developer fee.</p>
         <form id="waitlist-form">
-          <label for="email">Email address</label>
+          <label for="email" data-i18n="email">Email address</label>
           <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
-          <button type="submit" id="join-button">Join the waitlist</button>
-          <p class="fine-print">By joining, you agree to an email when <span class="brand-name">sudoku42</span> for iPhone &amp; iPad is ready. No newsletter. <a href="mailto:manuel@sudoku42.com?subject=Remove%20me%20from%20the%20iOS%20waitlist">Leave anytime</a>.</p>
+          <button type="submit" id="join-button" data-i18n="join">Join the waitlist</button>
+          <p class="fine-print"><span data-i18n="finePrint">By joining, you agree to an email when sudoku42 for iPhone &amp; iPad is ready. No newsletter.</span> <a href="mailto:manuel@sudoku42.com?subject=Remove%20me%20from%20the%20iOS%20waitlist" data-i18n="leave">Leave anytime</a>.</p>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
         </form>
         <noscript><p>Please enable JavaScript to sign up, or <a href="mailto:manuel@sudoku42.com?subject=iOS%20waitlist">email me to join</a>.</p></noscript>
       </section>
       <section id="success" aria-labelledby="success-title" hidden>
-        <h2 id="success-title" tabindex="-1">You’re in! 🎉</h2>
-        <p>I’ll email you when <span class="brand-name">sudoku42</span> for iPhone &amp; iPad is ready.</p>
-        <button class="secondary" id="reset-waitlist" type="button">Use another email 🔄</button>
+        <h2 id="success-title" tabindex="-1" data-i18n="successHeading">You’re in! 🎉</h2>
+        <p data-i18n="success">I’ll email you when sudoku42 for iPhone &amp; iPad is ready.</p>
+        <button class="secondary" id="reset-waitlist" type="button" data-i18n="anotherEmail">Use another email 🔄</button>
       </section>
       <section class="sharing" id="sharing" aria-label="Share the waitlist" hidden>
-        <h2>Now bring someone with you. 😈</h2>
-        <p><span class="brand-name">sudoku42</span> gets better when there are more people to play with. More people on the waitlist means I will publish sooner.</p>
-        <button id="share-button" type="button">Share the waitlist ↗</button>
+        <h2 data-i18n="shareHeading">Now bring someone with you. 😈</h2>
+        <p data-i18n="shareIntro">sudoku42 gets better when there are more people to play with. More people on the waitlist means I will publish sooner.</p>
+        <button id="share-button" type="button" data-i18n="share">Share the waitlist ↗</button>
         <div id="share-fallback" hidden>
-          <label for="share-url">Link to share</label>
+          <label for="share-url" data-i18n="shareLink">Link to share</label>
           <input id="share-url" type="url" value="https://sudoku42.com/iOS/?utm_source=friend&amp;utm_campaign=ios_waitlist" readonly>
-          <button class="secondary" id="copy-button" type="button">Copy link</button>
+          <button class="secondary" id="copy-button" type="button" data-i18n="copy">Copy link</button>
         </div>
-        <a id="email-share" href="mailto:?subject=sudoku42%20for%20iPhone%20%26%20iPad&amp;body=sudoku42%20is%20almost%20ready%20for%20iPhone%20and%20iPad.%20Join%20the%20waitlist%20to%20hear%20when%20it%E2%80%99s%20ready.%0A%0Ahttps%3A%2F%2Fsudoku42.com%2FiOS%2F%3Futm_source%3Dfriend%26utm_campaign%3Dios_waitlist">Share by email</a>
+        <a id="email-share" href="mailto:?subject=sudoku42%20for%20iPhone%20%26%20iPad&amp;body=sudoku42%20is%20almost%20ready%20for%20iPhone%20and%20iPad.%20Join%20the%20waitlist%20to%20hear%20when%20it%E2%80%99s%20ready.%0A%0Ahttps%3A%2F%2Fsudoku42.com%2FiOS%2F%3Futm_source%3Dfriend%26utm_campaign%3Dios_waitlist" data-i18n="emailShare">Share by email</a>
         <p class="status" id="share-status" role="status" aria-live="polite"></p>
       </section>
     </main>
-    <a class="preview-link preview-link-footer" href="preview.html">See the app 👀 <span aria-hidden="true">→</span></a>
-    <footer><a href="/privacy/">Privacy</a><a href="mailto:manuel@sudoku42.com">Contact Manuel</a></footer>
+    <a class="preview-link preview-link-footer" href="preview.html"><span data-i18n="preview">See the app 👀</span> <span aria-hidden="true">→</span></a>
+    <footer><a href="/privacy/" data-i18n="privacy">Privacy</a><a href="mailto:manuel@sudoku42.com" data-i18n="contact">Contact Manuel</a><a href="https://play.google.com/store/apps/details?id=com.mriezebosch.sudoku" data-i18n="android">Android app</a></footer>
   </div>
 </body>
 </html>

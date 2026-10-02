@@ -1,18 +1,25 @@
 "use strict";
 const endpoint = "https://us-central1-sudoku42xyz.cloudfunctions.net/waitlist";
-const campaignUrl = "https://sudoku42.com/iOS/?utm_source=friend&utm_campaign=ios_waitlist";
-const shareText = "sudoku42 is almost ready for iPhone and iPad. Join the waitlist to hear when it’s ready.";
+const translate = window.sudoku42T || ((key) => key);
+const campaign = new URL("https://sudoku42.com/iOS/");
+campaign.searchParams.set("utm_source", "friend");
+campaign.searchParams.set("utm_campaign", "ios_waitlist");
+const campaignUrl = campaign.href;
+const shareText = translate("shareText");
 const form = document.getElementById("waitlist-form");
 const formStatus = document.getElementById("form-status");
 const joinButton = document.getElementById("join-button");
 const shareStatus = document.getElementById("share-status");
 const shareInput = document.getElementById("share-url");
 const shareFallback = document.getElementById("share-fallback");
+const emailShare = document.getElementById("email-share");
 const signup = document.getElementById("signup");
 const success = document.getElementById("success");
 const sharing = document.getElementById("sharing");
 const resetWaitlist = document.getElementById("reset-waitlist");
 const signupCompleteKey = "sudoku42-ios-waitlist-joined";
+shareInput.value = campaignUrl;
+emailShare.href = `mailto:?subject=${encodeURIComponent("sudoku42 for iPhone & iPad")}&body=${encodeURIComponent(`${shareText}\n\n${campaignUrl}`)}`;
 function deviceFamily() {
   const userAgent = navigator.userAgent;
   if (/iPad/.test(userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "ipad";
@@ -44,9 +51,9 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (joinButton.disabled || !form.reportValidity()) return;
   joinButton.disabled = true;
-  joinButton.textContent = "Joining…";
+  joinButton.textContent = translate("joining");
   formStatus.classList.remove("error");
-  formStatus.textContent = "Signing up…";
+  formStatus.textContent = translate("signingUp");
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {
@@ -62,23 +69,23 @@ form.addEventListener("submit", async (event) => {
       } }),
     });
     if (!response.ok) {
-      if (response.status === 429) throw new Error("The server is busy. Please try again in a moment.");
-      if (response.status === 400) throw new Error("Please check your email address and try again.");
-      throw new Error("We couldn’t save your signup. Please try again in a moment.");
+      if (response.status === 429) throw new Error(translate("busy"));
+      if (response.status === 400) throw new Error(translate("invalidEmail"));
+      throw new Error(translate("saveFailed"));
     }
     const { result } = await response.json();
-    if (result?.ok !== true) throw new Error("We couldn’t save your signup. Please try again.");
+    if (result?.ok !== true) throw new Error(translate("saveFailed"));
     localStorage.setItem(signupCompleteKey, "true");
     showConfirmation(true);
     form.reset();
     document.getElementById("success-title").focus();
   } catch (error) {
     formStatus.classList.add("error");
-    formStatus.textContent = error.name === "AbortError" ? "That took too long. Please try again." : error.message;
+    formStatus.textContent = error.name === "AbortError" ? translate("timeout") : error.message;
   } finally {
     clearTimeout(timeout);
     joinButton.disabled = false;
-    joinButton.textContent = "Join the waitlist";
+    joinButton.textContent = translate("join");
   }
 });
 function showShareFallback() {
@@ -102,9 +109,9 @@ document.getElementById("share-button").addEventListener("click", share);
 document.getElementById("copy-button").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(campaignUrl);
-    shareStatus.textContent = "Link copied.";
+    shareStatus.textContent = translate("copied");
   } catch {
     showShareFallback();
-    shareStatus.textContent = "Select and copy the link above to share it.";
+    shareStatus.textContent = translate("selectCopy");
   }
 });
