@@ -13,6 +13,7 @@ const dictionary = {
     timeout: "That took too long. Please try again.", copied: "Link copied.",
     selectCopy: "Select and copy the link above to share it.",
     shareText: "sudoku42 is almost ready for iPhone and iPad. Join the waitlist to hear when it is ready.",
+    shareSmall: "Share the waitlist", shareAria: "Share the waitlist", sharePreview: "Share this preview", sharePreviewAria: "Share this preview", sharePreviewText: "Preview sudoku42 for iPhone and iPad.", returnWaitlistSmall: "Waitlist 📃",
   },
   nl: {
     contact: "Neem contact op met Manuel", privacy: "Privacy", android: "Android-app",
@@ -20,8 +21,8 @@ const dictionary = {
     threshold: "Bij 💯 aanmeldingen breng ik de app ook voor iPhone en iPad uit. Dat is het aantal dat ik nodig heb voordat ik Apples jaarlijkse ontwikkelaarskosten betaal.",
     email: "E-mailadres", join: "Schrijf je in voor de wachtlijst", finePrint: "Met je aanmelding geef je toestemming voor één e-mail zodra sudoku42 voor iPhone en iPad beschikbaar is. Geen nieuwsbrief.", leave: "Uitschrijven kan altijd",
     successHeading: "Je staat op de wachtlijst! 🎉", success: "Ik stuur je een e-mail zodra sudoku42 voor iPhone en iPad beschikbaar is.", anotherEmail: "Gebruik een ander e-mailadres 🔄",
-    shareHeading: "Neem nu iemand mee. 😈", shareIntro: "Met meer spelers wordt sudoku42 leuker. Hoe meer mensen zich aanmelden, hoe sneller de app verschijnt.", share: "Deel de wachtlijst ↗", shareLink: "Link om te delen", copy: "Kopieer de link", emailShare: "Deel via e-mail", preview: "Bekijk de app 👀",
-    previewHeading: "Eén sudoku per dag. Voor iedereen. Binnenkort beschikbaar!", previewSubheading: "Vergelijk je tijd met spelers wereldwijd.", previewIntro: "Speel de dagelijkse sudoku die iedereen speelt en vergelijk je tijd met spelers over de hele wereld.", gallery: "Voorbeelden van de sudoku42-app", captionOne: "De puzzel van vandaag, wereldwijd gedeeld.", captionTwo: "Elke zet telt mee voor je tijd.", captionThree: "Vergelijk je tijd met die van andere spelers.", returnWaitlist: "Wachtlijst voor iPhone & iPad 📃",
+    shareHeading: "Neem nu nog iemand mee. 😈", shareIntro: "Met meer spelers wordt sudoku42 leuker. Hoe meer mensen zich aanmelden, hoe sneller de app verschijnt.", share: "Deel de wachtlijst ↗", shareSmall: "Deel de wachtlijst", shareAria: "Deel de wachtlijst", sharePreview: "Deel deze pagina", sharePreviewAria: "Deel deze pagina", sharePreviewText: "Bekijk sudoku42 voor iPhone en iPad.", shareLink: "Link om te delen", copy: "Kopieer de link", emailShare: "Deel via e-mail", preview: "Bekijk de app 👀",
+    previewHeading: "Eén sudoku per dag. Voor iedereen. Binnenkort beschikbaar!", previewSubheading: "Vergelijk je tijd met spelers wereldwijd.", previewIntro: "Speel de dagelijkse sudoku die iedereen speelt en vergelijk je tijd met spelers over de hele wereld.", gallery: "Voorbeelden van de sudoku42-app", captionOne: "De puzzel van vandaag, wereldwijd gedeeld.", captionTwo: "Elke zet telt mee voor je tijd.", captionThree: "Vergelijk je tijd met die van andere spelers.", returnWaitlist: "Wachtlijst voor iPhone & iPad 📃", returnWaitlistSmall: "Wachtlijst 📃",
     joining: "Bezig met aanmelden…", signingUp: "Je wordt aangemeld…", busy: "De server heeft het druk. Probeer het zo nog eens.", invalidEmail: "Controleer je e-mailadres en probeer het opnieuw.", saveFailed: "We konden je aanmelding niet opslaan. Probeer het zo nog eens.", timeout: "Dat duurde te lang. Probeer het opnieuw.", copied: "Link gekopieerd.", selectCopy: "Selecteer en kopieer de link hierboven om hem te delen.", shareText: "sudoku42 komt bijna naar iPhone en iPad. Schrijf je in voor de wachtlijst en hoor het zodra de app beschikbaar is.",
   },
 };

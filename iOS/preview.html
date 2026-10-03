@@ -7,10 +7,11 @@
   <meta name="description" content="Preview sudoku42 for iPhone and iPad: shared daily puzzles, touch-first input, and results.">
   <link rel="canonical" href="https://sudoku42.com/iOS/preview.html">
   <link rel="icon" href="../icon.png">
-  <link rel="stylesheet" href="style.css?v=3">
-  <script src="../translate.js?v=21" defer></script>
+  <link rel="stylesheet" href="style.css?v=4">
+  <script src="../translate.js?v=22" defer></script>
+  <script src="app.js?v=6" defer></script>
 </head>
-<body>
+<body data-share-page="preview">
   <div class="page">
     <header><a href="/" class="brand"><img src="../icon.png" width="24" height="24" alt="">sudoku42</a></header>
     <main>
@@ -33,7 +34,18 @@
           </figure>
         </div>
       </section>
-      <a class="preview-link preview-link-right" href="index.html"><span data-i18n="returnWaitlist">iPhone &amp; iPad waitlist 📃</span> <span aria-hidden="true">→</span></a>
+      <div class="below-signup-actions">
+        <section class="share-compact" aria-label="Share this preview" data-i18n-attr="aria-label:sharePreviewAria">
+          <button class="secondary share-button" type="button" data-i18n="sharePreview">Share this preview</button>
+          <div class="share-fallback" hidden>
+            <label data-i18n="shareLink">Link to share</label>
+            <input class="share-url" type="url" readonly>
+            <button class="secondary copy-button" type="button" data-i18n="copy">Copy link</button>
+          </div>
+          <p class="status share-status" role="status" aria-live="polite"></p>
+        </section>
+        <a class="preview-link preview-link-inline" href="index.html"><span data-i18n="returnWaitlistSmall">Waitlist 📃</span> <span aria-hidden="true">→</span></a>
+      </div>
     </main>
     <footer><a href="/privacy/" data-i18n="privacy">Privacy</a><a href="mailto:manuel@sudoku42.com" data-i18n="contact">Contact Manuel</a><a href="https://play.google.com/store/apps/details?id=com.mriezebosch.sudoku" data-i18n="android">Android app</a></footer>
   </div>

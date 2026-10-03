@@ -15,9 +15,9 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../icon.png">
-  <link rel="stylesheet" href="style.css?v=3">
-  <script src="../translate.js?v=21" defer></script>
-  <script src="app.js?v=5" defer></script>
+  <link rel="stylesheet" href="style.css?v=4">
+  <script src="../translate.js?v=22" defer></script>
+  <script src="app.js?v=6" defer></script>
 </head>
 <body>
   <div class="page">
@@ -34,6 +34,16 @@
           <p class="fine-print"><span data-i18n="finePrint">By joining, you agree to an email when sudoku42 for iPhone &amp; iPad is ready. No newsletter.</span> <a href="mailto:manuel@sudoku42.com?subject=Remove%20me%20from%20the%20iOS%20waitlist" data-i18n="leave">Leave anytime</a>.</p>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
         </form>
+        <section class="share-compact" aria-label="Share the waitlist" data-i18n-attr="aria-label:shareAria">
+          <button class="secondary share-button" type="button" data-i18n="shareSmall">Share the waitlist</button>
+          <div class="share-fallback" hidden>
+            <label data-i18n="shareLink">Link to share</label>
+            <input class="share-url" type="url" readonly>
+            <button class="secondary copy-button" type="button" data-i18n="copy">Copy link</button>
+          </div>
+          <p class="status share-status" role="status" aria-live="polite"></p>
+        </section>
+        <a class="preview-link preview-link-right" href="preview.html"><span data-i18n="preview">See the app 👀</span> <span aria-hidden="true">→</span></a>
         <noscript><p>Please enable JavaScript to sign up, or <a href="mailto:manuel@sudoku42.com?subject=iOS%20waitlist">email me to join</a>.</p></noscript>
       </section>
       <section id="success" aria-labelledby="success-title" hidden>
@@ -44,17 +54,17 @@
       <section class="sharing" id="sharing" aria-label="Share the waitlist" hidden>
         <h2 data-i18n="shareHeading">Now bring someone with you. 😈</h2>
         <p data-i18n="shareIntro">sudoku42 gets better when there are more people to play with. More people on the waitlist means I will publish sooner.</p>
-        <button id="share-button" type="button" data-i18n="share">Share the waitlist ↗</button>
-        <div id="share-fallback" hidden>
-          <label for="share-url" data-i18n="shareLink">Link to share</label>
-          <input id="share-url" type="url" value="https://sudoku42.com/iOS/?utm_source=friend&amp;utm_campaign=ios_waitlist" readonly>
-          <button class="secondary" id="copy-button" type="button" data-i18n="copy">Copy link</button>
+        <button class="share-button" type="button" data-i18n="share">Share the waitlist ↗</button>
+        <div class="share-fallback" hidden>
+          <label data-i18n="shareLink">Link to share</label>
+          <input class="share-url" type="url" readonly>
+          <button class="secondary copy-button" type="button" data-i18n="copy">Copy link</button>
         </div>
-        <a id="email-share" href="mailto:?subject=sudoku42%20for%20iPhone%20%26%20iPad&amp;body=sudoku42%20is%20almost%20ready%20for%20iPhone%20and%20iPad.%20Join%20the%20waitlist%20to%20hear%20when%20it%E2%80%99s%20ready.%0A%0Ahttps%3A%2F%2Fsudoku42.com%2FiOS%2F%3Futm_source%3Dfriend%26utm_campaign%3Dios_waitlist" data-i18n="emailShare">Share by email</a>
-        <p class="status" id="share-status" role="status" aria-live="polite"></p>
+        <a class="email-share" href="mailto:?subject=sudoku42%20for%20iPhone%20%26%20iPad" data-i18n="emailShare">Share by email</a>
+        <p class="status share-status" role="status" aria-live="polite"></p>
       </section>
+      <a class="preview-link preview-link-right" id="post-signup-preview" href="preview.html" hidden><span data-i18n="preview">See the app 👀</span> <span aria-hidden="true">→</span></a>
     </main>
-    <a class="preview-link preview-link-footer" href="preview.html"><span data-i18n="preview">See the app 👀</span> <span aria-hidden="true">→</span></a>
     <footer><a href="/privacy/" data-i18n="privacy">Privacy</a><a href="mailto:manuel@sudoku42.com" data-i18n="contact">Contact Manuel</a><a href="https://play.google.com/store/apps/details?id=com.mriezebosch.sudoku" data-i18n="android">Android app</a></footer>
   </div>
 </body>

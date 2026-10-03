@@ -5,21 +5,21 @@ const campaign = new URL("https://sudoku42.com/iOS/");
 campaign.searchParams.set("utm_source", "friend");
 campaign.searchParams.set("utm_campaign", "ios_waitlist");
 const campaignUrl = campaign.href;
-const shareText = translate("shareText");
+const isPreviewPage = document.body.dataset.sharePage === "preview";
+const shareUrl = isPreviewPage
+  ? document.querySelector('link[rel="canonical"]')?.href || window.location.href
+  : campaignUrl;
+const shareText = translate(isPreviewPage ? "sharePreviewText" : "shareText");
+const shareTitle = isPreviewPage ? "Preview sudoku42 for iPhone & iPad" : "sudoku42 for iPhone & iPad";
 const form = document.getElementById("waitlist-form");
 const formStatus = document.getElementById("form-status");
 const joinButton = document.getElementById("join-button");
-const shareStatus = document.getElementById("share-status");
-const shareInput = document.getElementById("share-url");
-const shareFallback = document.getElementById("share-fallback");
-const emailShare = document.getElementById("email-share");
 const signup = document.getElementById("signup");
 const success = document.getElementById("success");
 const sharing = document.getElementById("sharing");
+const postSignupPreview = document.getElementById("post-signup-preview");
 const resetWaitlist = document.getElementById("reset-waitlist");
 const signupCompleteKey = "sudoku42-ios-waitlist-joined";
-shareInput.value = campaignUrl;
-emailShare.href = `mailto:?subject=${encodeURIComponent("sudoku42 for iPhone & iPad")}&body=${encodeURIComponent(`${shareText}\n\n${campaignUrl}`)}`;
 function deviceFamily() {
   const userAgent = navigator.userAgent;
   if (/iPad/.test(userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "ipad";
@@ -32,22 +32,24 @@ function showConfirmation(focus = false) {
   signup.hidden = true;
   success.hidden = false;
   sharing.hidden = false;
+  postSignupPreview.hidden = false;
   if (focus) document.getElementById("success-title").focus();
 }
-if (localStorage.getItem(signupCompleteKey) === "true") showConfirmation();
-resetWaitlist.addEventListener("click", () => {
+if (form && localStorage.getItem(signupCompleteKey) === "true") showConfirmation();
+resetWaitlist?.addEventListener("click", () => {
   localStorage.removeItem(signupCompleteKey);
   signup.hidden = false;
   success.hidden = true;
   sharing.hidden = true;
+  postSignupPreview.hidden = true;
   form.reset();
   formStatus.classList.remove("error");
   formStatus.textContent = "";
-  shareFallback.hidden = true;
-  shareStatus.textContent = "";
+  document.querySelectorAll(".share-fallback").forEach((fallback) => { fallback.hidden = true; });
+  document.querySelectorAll(".share-status").forEach((status) => { status.textContent = ""; });
   form.elements.email.focus();
 });
-form.addEventListener("submit", async (event) => {
+form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (joinButton.disabled || !form.reportValidity()) return;
   joinButton.disabled = true;
@@ -88,30 +90,44 @@ form.addEventListener("submit", async (event) => {
     joinButton.textContent = translate("join");
   }
 });
-function showShareFallback() {
-  shareFallback.hidden = false;
-  shareInput.focus();
-  shareInput.select();
+function showShareFallback(component) {
+  const fallback = component.querySelector(".share-fallback");
+  const input = component.querySelector(".share-url");
+  fallback.hidden = false;
+  input.focus();
+  input.select();
 }
-async function share() {
-  shareStatus.textContent = "";
+async function share(component) {
+  const status = component.querySelector(".share-status");
+  status.textContent = "";
   if (navigator.share) {
     try {
-      await navigator.share({ title: "sudoku42 for iPhone & iPad", text: shareText, url: campaignUrl });
+      await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
       return;
     } catch (error) {
       if (error.name === "AbortError") return;
     }
   }
-  showShareFallback();
+  showShareFallback(component);
 }
-document.getElementById("share-button").addEventListener("click", share);
-document.getElementById("copy-button").addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(campaignUrl);
-    shareStatus.textContent = translate("copied");
-  } catch {
-    showShareFallback();
-    shareStatus.textContent = translate("selectCopy");
-  }
+document.querySelectorAll(".share-button").forEach((button, index) => {
+  const component = button.closest(".sharing, .share-compact");
+  const input = component.querySelector(".share-url");
+  const label = component.querySelector(".share-fallback label");
+  const emailShare = component.querySelector(".email-share");
+  input.id = `share-url-${index + 1}`;
+  label.htmlFor = input.id;
+  input.value = shareUrl;
+  if (emailShare) emailShare.href = `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
+  button.addEventListener("click", () => share(component));
+  component.querySelector(".copy-button").addEventListener("click", async () => {
+    const status = component.querySelector(".share-status");
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      status.textContent = translate("copied");
+    } catch {
+      showShareFallback(component);
+      status.textContent = translate("selectCopy");
+    }
+  });
 });

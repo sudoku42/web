@@ -194,17 +194,41 @@ button:disabled {
   font-size: 14px;
   color: var(--muted);
 }
-#share-fallback {
+.share-fallback {
   margin-top: 16px;
 }
-#copy-button {
+.copy-button {
   margin-top: 10px;
 }
-#email-share {
+.email-share {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
   font-size: 14px;
+}
+.share-compact {
+  margin: 20px 0;
+}
+.below-signup-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+.below-signup-actions .share-compact {
+  margin: 0;
+}
+.share-compact .share-button {
+  width: auto;
+  min-height: 40px;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.preview-link-inline {
+  flex: none;
+  margin: 0;
 }
 footer {
   display: flex;
