@@ -17,7 +17,7 @@ const joinButton = document.getElementById("join-button");
 const signup = document.getElementById("signup");
 const success = document.getElementById("success");
 const sharing = document.getElementById("sharing");
-const postSignupPreview = document.getElementById("post-signup-preview");
+const postSignupActions = document.getElementById("post-signup-actions");
 const resetWaitlist = document.getElementById("reset-waitlist");
 const signupCompleteKey = "sudoku42-ios-waitlist-joined";
 function deviceFamily() {
@@ -32,7 +32,7 @@ function showConfirmation(focus = false) {
   signup.hidden = true;
   success.hidden = false;
   sharing.hidden = false;
-  postSignupPreview.hidden = false;
+  postSignupActions.hidden = false;
   if (focus) document.getElementById("success-title").focus();
 }
 if (form && localStorage.getItem(signupCompleteKey) === "true") showConfirmation();
@@ -41,7 +41,7 @@ resetWaitlist?.addEventListener("click", () => {
   signup.hidden = false;
   success.hidden = true;
   sharing.hidden = true;
-  postSignupPreview.hidden = true;
+  postSignupActions.hidden = true;
   form.reset();
   formStatus.classList.remove("error");
   formStatus.textContent = "";

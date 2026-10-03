@@ -190,6 +190,9 @@ button:disabled {
   border: 1px solid var(--border);
   border-radius: 5px;
 }
+.post-share-action {
+  margin-top: 16px;
+}
 .sharing p {
   font-size: 14px;
   color: var(--muted);
@@ -233,6 +236,7 @@ button:disabled {
 footer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   margin-top: 20px;
 }
