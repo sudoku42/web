@@ -68,6 +68,7 @@ form?.addEventListener("submit", async (event) => {
         email: form.elements.email.value.trim(),
         source: params.get("utm_source") || "direct",
         deviceFamily: deviceFamily(),
+        locale: window.sudoku42Locale,
       } }),
     });
     if (!response.ok) {
