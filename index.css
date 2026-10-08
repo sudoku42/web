@@ -5,7 +5,28 @@ html, body {
     padding:1em;
 }
 
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle decorative phone mockup, centred behind the store badges */
+body::before {
+    content: "";
+    position: fixed;
+    left: 65%;
+    top: -8%;
+    transform: translateX(-35%);
+    width: min(70vw, 34rem);
+    aspect-ratio: 675 / 1200;
+    background: url("img/mockup-bg.png") no-repeat center / contain;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -1;
+}
+
 .center {
+    position: relative;
     width: min(100%, 32rem);
     margin: 0 auto;
     text-align: center;
@@ -48,6 +69,11 @@ ul.contact {
 @media (max-width: 30rem) {
     html, body {
         padding: 0.5em;
+    }
+
+    body::before {
+        width: 90vw;
+        opacity: 0.08;
     }
 
     .store-badge {
