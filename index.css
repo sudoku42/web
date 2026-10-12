@@ -43,6 +43,19 @@ a {
     text-decoration: none;
 }
 
+.open-in-app {
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    border-radius: 999px;
+    background: #222;
+    color: #fff;
+    font-weight: bold;
+}
+
+.open-in-app[hidden] {
+    display: none;
+}
+
 .store-badge {
     width: 12rem !important;
     max-width: 100%;

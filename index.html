@@ -8,7 +8,7 @@
     <meta name="description" content="Join me in this multiplayer sudoku game!">
 
     <meta property="og:title" content="sudoku42" />
-    <meta property="og:url" content="https://sudoku42.xyz/" />
+    <meta property="og:url" content="https://sudoku42.com/" />
     <meta property="og:description" content="Join me in this multiplayer sudoku game!">
     <meta property="og:image" content="https://raw.githubusercontent.com/sudoku42/web/master/icon.png">
 
@@ -19,6 +19,15 @@
         if (params.has('id')) {
             window.document.title = params.get('id') + ' - sudoku42'
         }
+        // The app is Android-only for now, so only offer the button on Android. Add iOS here once that app ships.
+        var isAndroid = /Android/.test(navigator.userAgent)
+        window.addEventListener('DOMContentLoaded', function () {
+            if (isAndroid && (params.has('id') || params.has('daily') || params.has('group'))) {
+                var open = document.getElementById('open-in-app')
+                open.href = window.location.href
+                open.hidden = false
+            }
+        })
     </script>
 </head>
 
@@ -32,6 +41,9 @@
                 <img class="store-badge" src="img/ios-waitlist.svg" width="224" height="66" alt="Coming to iOS — Join the waitlist" />
             </a>
         </div>
+        <p>
+            <a id="open-in-app" class="open-in-app" hidden>Open in the sudoku42 app</a>
+        </p>
         <ul class="contact">
             <li><a href="mailto:mriezebosch@gmail.com?subject=sudoku42" data-i18n="contact">Contact Manuel</a></li>
         </ul>
