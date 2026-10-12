@@ -24,7 +24,10 @@
         window.addEventListener('DOMContentLoaded', function () {
             if (isAndroid && (params.has('id') || params.has('daily') || params.has('group'))) {
                 var open = document.getElementById('open-in-app')
-                open.href = window.location.href
+                // An intent link opens the app directly (even when the tap comes from this same host) and falls back to Play.
+                var playStore = 'https://play.google.com/store/apps/details?id=com.mriezebosch.sudoku'
+                open.href = 'intent://sudoku42.com' + window.location.pathname + window.location.search +
+                    '#Intent;scheme=https;package=com.mriezebosch.sudoku;S.browser_fallback_url=' + encodeURIComponent(playStore) + ';end'
                 open.hidden = false
             }
         })
